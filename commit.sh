@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ## Bash script to use git
 ## 
 ## Usage: bash commit.sh
@@ -27,7 +27,7 @@ else
 
         echo "WARNING: You are on *master*!"
         echo "I will help you to create a branch with your changes."
-        echo "But, in the next time, I will leave you crash! ¬¬' "
+        echo "But, in the next time, I will leave you crash! ¬¬'"
         echo "What the name of your branch? "
         read resp
 
@@ -62,7 +62,7 @@ fi
 # If diferent, merge branch in the master branch
 
 if [ $currentBranch != $MASTER ]; then
-    echo -n "Would you like to merge  your branch $currentBranch into master [y|n]?"
+    echo -n "Would you like to merge your branch $currentBranch into master [y|n]?"
     read resp
     if [ "$resp" == 'y' ]; then
         git checkout master
@@ -86,6 +86,7 @@ if [ $currentBranch == $MASTER -a $difference -eq 1 ]; then
         echo "Push does not executed!"
     fi
 fi
+
 # Tag
 
 echo -n "Would you like to make a tag [y|n]?"
@@ -97,7 +98,7 @@ if [ "$resp" == 'y' ]; then
     arr=(${version//./ })
     newversion=${arr[0]}.${arr[1]}.$((${arr[2]}+1))
     echo "Main version: $version"
-    echo -n "Number of the new version vn.m [${newversion}]? "
+    echo -n "Number of the new version vn.m [entra=${newversion}]? "
     read resp
     [ "$resp" != "" ] && newversion=$resp
     echo New version: $newversion
